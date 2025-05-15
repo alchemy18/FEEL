@@ -93,3 +93,7 @@ To get started with the FEEL benchmark framework, follow these steps to set up y
 ├── README.md
 
 └── requirements.txt
+
+# License
+
+This code is released under the MIT license. Please see the license file for details.
