@@ -81,9 +81,15 @@ To get started with the FEEL benchmark framework, follow these steps to set up y
 ## 📦 Repository Structure
 
 ├── Benchmarking/             # Model running file and compiling IPYNB
+
 ├── Fine_tuning/              # CLSP FineTuning Scripts
+
 ├── Scripts/                  # Benchmark, artificats, visualization scripts
+
 ├── Vizualize/                # IPYNB to visualize Cross Dataset represntations when group against one metric
+
 ├── group_finetuning/         # Cross Dataset grouping Benchmarking and adaptation scripts
+
 ├── README.md
+
 └── requirements.txt
