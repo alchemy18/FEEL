@@ -130,7 +130,7 @@ In order to submit the results, please fill out this form or reach out to us at 
 
 ### 2.2 Preprocessing Steps
 
-Each dataset has its own labelling and frequency. Please refer to the Data_Preparation.ipynb that has steps and example of preparing Exercise, NURSE and EMOGNITION datasets. 
+Each dataset has its own labelling and frequency. Please refer to the Data_Preparation.ipynb that has steps and example of preparing Exercise dataset. 
 
 ## 3. Running Experiments
 ### 3.1 Benchmarking Individual Datasets (2-class)
