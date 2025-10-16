@@ -7,6 +7,7 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import DistilBertTokenizer, DistilBertModel
 from tqdm import tqdm
 import random
+import argparse
 import os
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
@@ -418,6 +419,14 @@ def train_cocoop(dataset_name, csv_path, ckpt_path=None, feature_cols=None, labe
 # --- Usage ---
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Fine-tune CLSP model for two-class emotion recognition.")
+    parser.add_argument("--dataset_name", type=str, required=True, help="Name of the dataset (e.g., Exercise, FordigitStress)")
+    args = parser.parse_args()
+
+    base_path = os.path.join("Datasets", args.dataset_name)
+    if not os.path.exists(base_path):
+        raise FileNotFoundError(f"Dataset folder not found: {base_path}")
+
     
     # Feature columns from your CSV
     feature_EDA = ['ku_eda','sk_eda','dynrange','slope','variance','entropy','insc','fd_mean','max_scr','min_scr','nSCR','meanAmpSCR','meanRespSCR','sumAmpSCR','sumRespSCR']
@@ -440,12 +449,12 @@ if __name__ == "__main__":
        'HRV_ShanEn', 'HRV_FuzzyEn', 'HRV_MSEn', 'HRV_CMSEn', 'HRV_RCMSEn',
        'HRV_CD', 'HRV_HFD', 'HRV_KFD', 'HRV_LZC']
     # Train CoCoOp with pretrained CLSP
-    dataset_name = "<dataset name>"
+    dataset_name =  args.dataset_name
 
     modalities = {
         "EDA": {
             "feature_cols": feature_EDA,
-            "csv": "<path for the eda features data for the dataset>",
+            "csv": os.path.join(base_path, "Features_EDA.csv"),
             "ckpt": {
                 "arousal_category": "<path for the clsp model for eda and arousal category>",
                 "valence_category": "<path for the clsp model for eda and valence category>"
@@ -453,7 +462,7 @@ if __name__ == "__main__":
         },
         "PPG": {
             "feature_cols": feature_PPG,
-            "csv":"<path for the ppg features data for the dataset>",
+            "csv": os.path.join(base_path, "Features_PPG.csv"),
             "ckpt": {
                 "arousal_category": "<path for the clsp model for ppg and arousal category>",
                 "valence_category": "<path for the clsp model for ppg and valence category>"
@@ -461,7 +470,7 @@ if __name__ == "__main__":
         },
         "Combined": {
             "feature_cols": feature_Combined,
-            "csv": "<path for the eda+ppg features data for the dataset>",
+            "csv": os.path.join(base_path, "Features_Combined.csv"),
             "ckpt": {
                 "arousal_category": "<path for the clsp model for eda+ppg and arousal category>",
                 "valence_category": "<path for the clsp model for eda+ppg and arousal category>"
