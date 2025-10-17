@@ -1,12 +1,12 @@
 # FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition
 
-> Under peer review at NeurIPS 2025
+> Accepted at NeurIPS 2025
 
 This is the code repository for the paper **"FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition"**, which introduces **FEEL** — the first large-scale benchmarking framework for emotion recognition using physiological signals across heterogeneous datasets.
 
 ## 🔍 Overview
 
-Emotion recognition from physiological signals like **EDA (Electrodermal Activity)** and **PPG (Photoplethysmography)** is gaining traction due to its potential in health and affective computing applications. However, generalizing models across diverse real-world datasets remains a major challenge.
+Emotion recognition from physiological signals like **EDA (Electrodermal Activity)** and **PPG (Photoplethysmography)** is gaining traction due to its potential in health and affective computing applications. However, comparing model performance across diverse real-world datasets remains a major challenge.
 
 **FEEL** addresses this gap by:
 
@@ -15,7 +15,9 @@ Emotion recognition from physiological signals like **EDA (Electrodermal Activit
   - Traditional Machine Learning (Random Forest, LDA)
   - Deep Learning with handcrafted features (MLP, RESNET, LSTM+MLP, Attention Layer + MLP)
   - Deep Learning on raw signals (Resnet, LSTM+MLP, CNN+ Transformer Encoder Block)
-  - Pretrained models using **Contrastive Language-Signal Pretraining (CLSP)** and finetuning using 2 different ablation (MLP and 1D-CNN) of Meta Net 
+  - Pretrained models using **Contrastive Language-Signal Pretraining (CLSP)** https://proceedings.neurips.cc/paper_files/paper/2024/hash/1cba8502063fab9df252a63968691768-Abstract-Datasets_and_Benchmarks_Track.html
+  - Finetuning using 2 different ablation (MLP and 1D-CNN) of Meta Net
+    
 - Performing **cross-dataset generalization analysis** across:
   - Experimental setting (Lab, Constraint, Real)
   - Device type (Wearable, Lab Based Device, Custom Wearable)
@@ -29,6 +31,7 @@ Emotion recognition from physiological signals like **EDA (Electrodermal Activit
 - Comprehensive cross-domain evaluation using Leave-One-Subject-Out CV
 - Performance analysis across 3 input types: EDA-only, PPG-only, EDA+PPG
 - Few-shot and zero-shot adaptation with CLSP models
+- Results on arousal, valence and four-quadrant classification.
 
 ---
 
