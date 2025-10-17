@@ -133,7 +133,9 @@ FFEL/
 ## 🔗 Project Continuation
 
 ➡️ This repository is a continuation of the previous phase of **[this project](https://github.com/alchemy18/EEVR/)**
+
 ➡️ For more details and updates, visit the **[project webpage](https://alchemy18.github.io/FEEL_Benchmark/)**
+
 🤝 If you want to contribute to the FEEL with new dataset or new models, submit your results **[here](https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/viewform)**
 
 
