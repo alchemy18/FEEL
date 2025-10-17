@@ -1,6 +1,6 @@
 # FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition
 
-> Accepted at NeurIPS 2025
+> Accepted at NeurIPS 2025 [Citation Coming Soon]
 
 This is the code repository for the paper **"FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition"**, which introduces **FEEL** — the first large-scale benchmarking framework for emotion recognition using physiological signals across heterogeneous datasets.
 
@@ -54,25 +54,25 @@ For each dataset, we generated preprocessed EDA and PPG signals, extracted featu
 
 Below is the list of the 19 publicly available emotion recognition datasets used in the FEEL benchmark, along with their access links:
 
-- [WESAD](https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection)
-- [NURSE](https://www.nature.com/articles/s41597-022-01361-y#:~:text=The%20dataset%20provides%20more%20than,validated%20stressful%20events%20by%20nurses.)
-- [EMOGNITION](https://www.nature.com/articles/s41597-022-01262-0)
-- [UBFC_PHYS](https://sites.google.com/view/ybenezeth/ubfc-phys)
-- [VERBIO](https://hubbs.engr.tamu.edu/resources/verbio-dataset/)
-- [PhyMER](https://ieeexplore.ieee.org/document/10265252)
-- [EmoWear](https://www.nature.com/articles/s41597-024-03429-3)
-- [MAUS](https://ieee-dataport.org/open-access/maus-dataset-mental-workload-assessment-n-back-task-using-wearable-sensor)
-- [CLAS](https://ieee-dataport.org/open-access/database-cognitive-load-affect-and-stress-recognition)
-- [CASE](https://www.nature.com/articles/s41597-019-0209-0)
-- [Unobtrusive](https://www.nature.com/articles/s41597-024-03738-7)
-- [CEAP-360VR](https://ieeexplore.ieee.org/document/9599346)
-- [ScientISST MOVE](https://physionet.org/content/scientisst-move-biosignals/1.0.1/)
-- [LAUREATE](https://dl.acm.org/doi/10.1145/3610892)
-- [ForDigitStress](https://ieeexplore.ieee.org/document/10756706)
-- [Dapper](https://www.nature.com/articles/s41597-021-00945-4)
-- [ADARP](https://arxiv.org/abs/2206.14568)
-- [MOCAS](https://polytechnic.purdue.edu/ahmrs/mocas-dataset)
-- [Exercise](https://www.nature.com/articles/s41597-025-04845-9)
+- [**WESAD**](https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html) 
+- [**NURSE**](https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkh6f#citations) 
+- [**EMOGNITION**](https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/R9WAF4) 
+- [**UBFC_PHYS**](https://sites.google.com/view/ybenezeth/ubfc-phys)
+- [**PhyMER**](https://sites.google.com/view/phymer-dataset) 
+- [**EmoWear**](https://zenodo.org/records/10407279)
+- [**MAUS**](https://ieee-dataport.org/open-access/maus-dataset-mental-workload-assessment-n-back-task-using-wearable-sensor) 
+- [**CLAS**](https://ieee-dataport.org/open-access/database-cognitive-load-affect-and-stress-recognition) 
+- [**CASE**](https://gitlab.com/karan-shr/case_dataset) 
+- [**Unobtrusive**](https://zenodo.org/records/10371068)
+- [**CEAP-360VR**](https://github.com/cwi-dis/CEAP-360VR-Dataset) 
+- [**ScientISST MOVE**](https://www.scientisst.com/projects/run-like-a-scientisst)
+- [**LAUREATE**](https://pc.inf.usi.ch/studentproject/affect-and-learning-in-the-laureate-dataset/) 
+- [**ForDigitStress**](https://hcai.eu/fordigitstress/) 
+- [**Dapper**](https://synapse.org/Synapse:syn22418021) 
+- [**ADARP**](https://zenodo.org/records/6640290)
+- [**MOCAS**](https://zenodo.org/records/7023242)  
+- [**VERBIO**](https://hubbs.engr.tamu.edu/resources/verbio-dataset/) 
+- [**Exercise**](https://physionet.org/content/wearable-device-dataset/1.0.0/) 
 
 ## Set-up
 
@@ -83,19 +83,59 @@ To get started with the FEEL benchmark framework, follow these steps to set up y
 
 ## 📦 Repository Structure
 
-├── Benchmarking/             # Model running file and compiling IPYNB
+```bash
+FFEL/
+├── Benchmarking/
+│   ├── Model_running.py # for running scripts for base model training
+│   ├── Group_running.py # for running scripts for base model training
+│   ├── Model_running_fourclass.py  # for running scripts for base model training for four-class binning
+├── Fine_tuning/
+│   ├── finetuning_CLSP_two_class_CNN.py # for fine-tuning clsp pre-trained model on 2-class with CNN Meta-net
+│   ├── finetuning_CLSP_two_class_MLP.py # for fine-tuning clsp pre-trained model on 2-class with MLP Meta-net
+│   ├── finetuning_CLSP_four_class_MLP.py # for fine-tuning clsp pre-trained model on 4-class with MLP Meta-net
+│   ├── finetuning_CLSP_four_class_MLP.py # for fine-tuning clsp pre-trained model on 4-class with CNN Meta-net
+├── Scripts/
+│   ├── LDA.py
+│   ├── MLP.py
+│   ├── RandomForest.py
+│   ├── clsp_com.py
+│   ├── clsp_eda.py
+│   ├── clsp_ppg.py
+│   ├── lstm_features.py
+│   ├── lstm_signals.py
+│   ├── resnet_features.py
+│   ├── resnet_signals.py
+│   ├── transformer_features.py
+│   ├── transformer_signals.py
+│   ├── visualize.py # for visualizating TSNE, UMAP, and data distribution
+│   ├── model.py # file to load base_model for analyzing PPG artifacts
+│   ├── ppg_artifact.py
+│   ├── eda_artifact.py
+│   ├── SA_Detection.json # resource file for eda-artifacts
+│   ├── TinyPPG_model_best_params.pth # resource file for ppg-artifacts
+├── Group-Benchmarking/
+│   ├── LDA_group.py
+│   ├── MLP_group.py
+│   ├── RandomForest_group.py
+│   ├── accross_group_mlp_lda_rf.py
+│   ├── clsp_group_setting.py
+│   ├── finetuning_CLSP_group_CNN_representative.py
+│   ├── finetuning_CLSP_group_representative.py
+│   ├── mlp_rf_clsp_zero_shot_within_group.ipynb
+├── Analysis/
+│   ├── Benchmarking_analysis.ipynb
+│   ├── vizualize_UMAP.ipynb
+├── Tutorial/
+│   ├── Data_Preparation.ipynb #tutorial for cleaning, bining, pre-processing datasets
+│   ├── README.md # tutorial for running and extending FEEL Benchmark
+```
 
-├── Fine_tuning/              # CLSP FineTuning Scripts
+## 🔗 Project Continuation
 
-├── Scripts/                  # Benchmark, artificats, visualization scripts
+➡️ This repository is a continuation of the previous phase of **[this project](https://github.com/alchemy18/EEVR/)**
+➡️ For more details and updates, visit the **[project webpage](https://alchemy18.github.io/FEEL_Benchmark/)**
+🤝 If you want to contribute to the FEEL with new dataset or new models, submit your results **[here](https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/viewform)**
 
-├── Vizualize/                # IPYNB to visualize Cross Dataset represntations when group against one metric
-
-├── group_finetuning/         # Cross Dataset grouping Benchmarking and adaptation scripts
-
-├── README.md
-
-└── requirements.txt
 
 # License
 
