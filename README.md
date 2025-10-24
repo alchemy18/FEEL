@@ -2,7 +2,7 @@
 
 > Accepted at NeurIPS 2025 [Citation Coming Soon]
 
-This is the code repository for the paper **"FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition"**, which introduces **FEEL** — the first large-scale benchmarking framework for emotion recognition using physiological signals across heterogeneous datasets.
+This is the code repository for the paper **"FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition"**, which introduces **FEEL** — the first large-scale benchmarking framework for emotion recognition using physiological signals across heterogeneous datasets. For researchers interested in contributing new datasets or evaluation results to FEEL, please refer to our project website: https://alchemy18.github.io/FEEL_Benchmark/
 
 ## 🔍 Overview
 
