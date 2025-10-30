@@ -1,6 +1,6 @@
 # FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition
 
-> Accepted at NeurIPS 2025 [Citation Coming Soon]
+> Accepted at NeurIPS 2025
 
 This is the code repository for the paper **"FEEL: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition"**, which introduces **FEEL** — the first large-scale benchmarking framework for emotion recognition using physiological signals across heterogeneous datasets. For researchers interested in contributing new datasets or evaluation results to FEEL, please refer to our project website: https://alchemy18.github.io/FEEL_Benchmark/
 
@@ -138,6 +138,18 @@ FFEL/
 
 🤝 If you want to contribute to the FEEL with new dataset or new models, submit your results **[here](https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/viewform)**
 
+## Citation
+
+```bash
+@inproceedings{
+singh2025feel,
+title={{FEEL}: Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition},
+author={Pragya Singh and Ankush Gupta and Somay Jalan and Mohan Kumar and Pushpendra Singh},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+year={2025},
+url={https://openreview.net/forum?id=JxuFBB5OpD}
+}
+```
 
 # License
 
