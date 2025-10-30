@@ -132,6 +132,42 @@ In order to submit the results, please fill out this form or reach out to us at 
 
 Each dataset has its own labelling and frequency. Please refer to the Data_Preparation.ipynb that has steps and example of preparing Exercise dataset. 
 
+### 2.3 Cross Dataset Grouping
+
+**Grouping Datasets by Cohorts and Preparing for Cross-Dataset Evaluation**
+
+To conduct consistent experiments, we first grouped the datasets into common cohorts based on three key factors:
+- Device used for data collection
+- Experimental setup and conditions
+- Labelling methodology
+
+All this metadata is documented in the respective READMEs, dataset documentation, and associated research papers.
+
+Once the grouping was complete, we merged the normalized feature CSV files of datasets belonging to the same cohort. This step created a single unified CSV file per cohort, which was then used for our experiments.
+
+---
+
+**Extending Cross-Dataset Evaluation to Demographic Parameters**
+
+Beyond device- or experiment-based grouping, we also extended cross-dataset evaluation to demographic attributes such as age and gender.
+- **For gender-based transferability**, we used nine datasets that include gender metadata: WESAD, ScientISST MOVE, UBFC_PHYS, Exercise, PhyMER, EmoWear, CASE, CEAP-360VR, and NURSE (female subjects only).
+- **For age-based transferability**, we considered seven datasets: WESAD, ScientISST MOVE, Exercise, PhyMER, EmoWear, CASE, and CEAP-360VR.
+
+---
+
+**Handling Demographic Metadata Across Datasets**
+
+Participant-level demographic information is available in only a subset of datasets, and the format varies widely.
+- Some datasets, like UBFC_PHYS, provide individual description files for each participant alongside the raw data.
+- Others, such as PhyMER, include demographic details in a single common metadata file or within their README documentation.
+
+To perform demographic-based cross-dataset experiments, it’s recommended that you:
+- Inspect each dataset closely to identify where demographic information is stored.
+- Collaborate with dataset authors, if necessary, to clarify participant-level metadata.
+- Group participants into demographic cohorts (e.g., male/female or age ranges).
+- Merge the corresponding normalized feature CSVs to create cohort-level CSVs for your cross-dataset evaluations.
+
+
 ## 3. Running Experiments
 ### 3.1 Benchmarking Individual Datasets (2-class)
 #### 3.1.1 Running Base experiments 
