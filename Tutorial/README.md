@@ -126,7 +126,7 @@ FFEL/
 
 The framework uses 19 publicly available datasets. The details are given in the README.MD, you can follow each dataset's usage policy to download it. 
 You can extend the framework to other datasets by following their usage policy. 
-In order to submit the results, please fill out this form https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/ or reach out to us at pragyas@iiitd.ac.in. 
+In order to submit the results, please fill out this form https://forms.gle/H99XYDrXx4adxjGp8 or reach out to us at pragyas@iiitd.ac.in. 
 
 ### 2.2 Preprocessing Steps
 
