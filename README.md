@@ -16,6 +16,8 @@ Emotion recognition from physiological signals like **EDA (Electrodermal Activit
   - Deep Learning with handcrafted features (MLP, RESNET, LSTM+MLP, Attention Layer + MLP)
   - Deep Learning on raw signals (Resnet, LSTM+MLP, CNN+ Transformer Encoder Block)
   - Pretrained models using **Contrastive Language-Signal Pretraining (CLSP)** https://proceedings.neurips.cc/paper_files/paper/2024/hash/1cba8502063fab9df252a63968691768-Abstract-Datasets_and_Benchmarks_Track.html
+  - Pre-trained Models: https://huggingface.co/Pragya/EEVR.
+Previously, the models were trained using a leave-one-out approach. The current upload includes pre-trained models for all participants.
   - Finetuning using 2 different ablation (MLP and 1D-CNN) of Meta Net
     
 - Performing **cross-dataset generalization analysis** across:
